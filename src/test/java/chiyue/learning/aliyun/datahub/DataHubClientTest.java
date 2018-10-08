@@ -1,5 +1,6 @@
 package chiyue.learning.aliyun.datahub;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import com.aliyun.datahub.common.data.FieldType;
 import com.aliyun.datahub.common.data.RecordSchema;
 import com.aliyun.datahub.common.data.RecordType;
 import com.aliyun.datahub.model.ListShardResult;
+import com.aliyun.datahub.model.PutBlobRecordsResult;
 import com.aliyun.datahub.model.PutRecordsResult;
 import com.aliyun.datahub.model.RecordEntry;
 import com.aliyun.datahub.model.ShardEntry;
@@ -101,5 +103,33 @@ public class DataHubClientTest {
 		new DataHubClient().addColumn("es_yxfbp_gw", "topic_example_1", field, false);
 		
 	}
+	
+	@Test
+	public void testPutBlobRecord() {
+		
+		String projectName = "es_yxfbp_gw";
+		String topicName = "topic_example_1";
+		
+		PutBlobRecordsResult result = new DataHubClient()
+				.putBlobRecord(projectName, topicName, 5, 2, 
+						RecordType.BLOB, "putBlobRecord", "aaa");
+		
+		System.out.println(result);
+	}
+	
+	
+	
+	@Test
+	public void testCreateDataConnector() {
+		
+	}
+	
+	@Test
+	public void testCreateADSDataConnector() {
+		
+		new DataHubClient().createADSDataConnector("es_yxfbp_gw", "topic_example_1");
+		
+	}
+	
 
 }
