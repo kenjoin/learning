@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.junit.Test;
 
 import chiyue.learning.crawler.service.CrawlerService;
+import chiyue.learning.crawler.service.impl.CrawlerServiceImpl;
 
 public class CrawlerServiceImplTest {
 
