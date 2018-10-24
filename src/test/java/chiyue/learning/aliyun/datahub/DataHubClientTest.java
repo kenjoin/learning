@@ -99,8 +99,8 @@ public class DataHubClientTest {
 	@Test
 	public void testAddColumn() {
 		
-		Field field = new Field("addr", FieldType.STRING);
-		new DataHubClient().addColumn("es_yxfbp_gw", "topic_example_1", field, false);
+		Field field = new Field("uniqueId", FieldType.STRING);
+		new DataHubClient().addColumn("es_yxfbp_gw", "dvc_log", field, false);
 		
 	}
 	
